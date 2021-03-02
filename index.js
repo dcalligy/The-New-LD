@@ -1,19 +1,39 @@
+'use strict';
 const Discord = require('discord.js');
-const config = require("./config.json");
+const config = require('./config.json');
+//const emojis = require('./emojis.js');
+
 const client = new Discord.Client();
 
-client.on("message", function(message) {
-    if (message.author.bot) return;
-    if (!message.content.startsWith(prefix)) return;
+client.on('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
+});
 
-    const commandBody = message.content.slice(prefix.length);
-    const args = commandBody.split(' ');
-    const command = args.shift().toLocaleLowerCase();
-
-    if (command == "ping") {
-        const timeTaken = Date.now() - message.createdTimestamp;
-        message.reply(`Pong! This message had a latency if ${timeTaken}ms`);
+client.on('message', (msg) => {
+    // Talk back to ya boi
+    console.log(`${msg.channel.guild ? msg.channel.guild.name : 'DM'}`
+                + `# ${msg.channel.name} ${msg.author.tag}: ${msg.content}`);
+    if (msg.content.toLocaleLowerCase() === 'ping') {
+        msg.reply('Pong!');
     }
+    else if (msg.content.toLocaleLowerCase() === 'ding') {
+        msg.reply('Dong!');
+    }
+    if (msg.content.toLocaleLowerCase() === 'uwu') {
+        msg.reply('OwO');
+    }
+    else if (msg.content.toLocaleLowerCase() === 'owo') {
+        msg.reply('UwU');
+    }
+});
+
+client.on('guildMemberAdd', member => {
+    // Send the message to a designated channel on a server.
+    const channel = member.guild.channels.cache.find(ch => ch.name === 'general');
+    // Do nothing if the channel wasn't found on this server
+    if (!channel) return;
+    // Send the message, mentioning the member
+    channel.send(`Welcome to the server, ${member}`);
 });
 
 client.login(config.BOT_TOKEN);
