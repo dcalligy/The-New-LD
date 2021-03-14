@@ -18,7 +18,8 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', (msg) => {
+// client.on('message', (msg) => {
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
     // Talk back to ya boi
     console.log(`${msg.channel.guild ? msg.channel.guild.name : 'DM'}`
                 + `# ${msg.channel.name} ${msg.author.tag}: ${msg.content}`);
@@ -42,10 +43,14 @@ client.on('message', (msg) => {
     else if (msg.content.startsWith(`${prefix}gucci`)) {
         msg.channel.send([gucci_mane.content]);
     }
-    else if (msg.content.startsWith(`${prefix}server`)) {
+    else if (msg.content === `${prefix}server`) {
         msg.channel.send(`This sever's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
     }
-});
+    else if (message.content === `${prefix}user-info`) {
+        message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+    }
+
+
 
 // This shit no work either...
 client.on('guildMemberAdd', member => {
