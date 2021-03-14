@@ -1,9 +1,18 @@
 'use strict';
 const Discord = require('discord.js');
-const config = require('./config.json');
+const { prefix, token } = require('./config.json');
+//const prefix = require('./config.json');
 //const emojis = require('./emojis.js');
 
 const client = new Discord.Client();
+
+// we need to create an array of objects i think
+// also need to figure out how to get this to work in a json file?
+// maybe we create another json file? lyrics.json or something?
+const gucci_mane = [
+    "Overdose of sauce, no meat, just sauce",
+    "I pushed a lot of pills, a lot of peas, a lot of powder, It's Gucci Mane La Fleur and jiggalo ya cowards."
+];
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -13,17 +22,25 @@ client.on('message', (msg) => {
     // Talk back to ya boi
     console.log(`${msg.channel.guild ? msg.channel.guild.name : 'DM'}`
                 + `# ${msg.channel.name} ${msg.author.tag}: ${msg.content}`);
-    if (msg.content.toLocaleLowerCase() === 'ping') {
-        msg.reply('Pong!');
+    if (msg.content.startsWith(`${prefix}ping`)) {
+        msg.channel.send('Pong!');
     }
-    else if (msg.content.toLocaleLowerCase() === 'ding') {
-        msg.reply('Dong!');
+    else if (msg.content.startsWith(`${prefix}ding`)) {
+        msg.channel.send('Dong!');
     }
-    if (msg.content.toLocaleLowerCase() === 'uwu') {
-        msg.reply('OwO');
+    else if (msg.content.startsWith(`${prefix}uwu`)) {
+        msg.channel.send('OwO');
     }
-    else if (msg.content.toLocaleLowerCase() === 'owo') {
-        msg.reply('UwU');
+    else if (msg.content.startsWith(`${prefix}owo`)) {
+        msg.channel.send('UwU');
+    }
+    else if (msg.content.startsWith(`${prefix}guwop`)) {
+        msg.channel.send('Dope fiend Willie used to finger fuck my rims!\n');
+        msg.channel.send('I wanna fuck tiny lil dirty ass.');
+    }
+    // This is sending an empty message for some reason...
+    else if (msg.content.startsWith(`${prefix}gucci`)) {
+        msg.channel.send([gucci_mane.content]);
     }
 });
 
@@ -36,4 +53,4 @@ client.on('guildMemberAdd', member => {
     channel.send(`Welcome to the server, ${member}`);
 });
 
-client.login(config.BOT_TOKEN);
+client.login(token);
