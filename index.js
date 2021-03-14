@@ -19,36 +19,40 @@ client.on('ready', () => {
 });
 
 client.on('message', (msg) => {
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
-    
-    // Talk back to ya boi
-    console.log(`${msg.channel.guild ? msg.channel.guild.name : 'DM'}`
-                + `# ${msg.channel.name} ${msg.author.tag}: ${msg.content}`);
-    if (msg.content.startsWith(`${prefix}ping`)) {
-        msg.channel.send('Pong!');
-    }
-    else if (msg.content.startsWith(`${prefix}ding`)) {
-        msg.channel.send('Dong!');
-    }
-    else if (msg.content.startsWith(`${prefix}uwu`)) {
-        msg.channel.send('OwO');
-    }
-    else if (msg.content.startsWith(`${prefix}owo`)) {
-        msg.channel.send('UwU');
-    }
-    else if (msg.content.startsWith(`${prefix}guwop`)) {
-        msg.channel.send('Dope fiend Willie used to finger fuck my rims!\n');
-        msg.channel.send('I wanna fuck tiny lil dirty ass.');
-    }
-    // This is sending an empty message for some reason...
-    else if (msg.content.startsWith(`${prefix}gucci`)) {
-        msg.channel.send([gucci_mane.content]);
-    }
-    else if (msg.content === `${prefix}server`) {
-        msg.channel.send(`This sever's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
-    }
-    else if (message.content === `${prefix}user-info`) {
-        message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+    try{
+        if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+        
+        // Talk back to ya boi
+        console.log(`${msg.channel.guild ? msg.channel.guild.name : 'DM'}`
+                    + `# ${msg.channel.name} ${msg.author.tag}: ${msg.content}`);
+        if (msg.content.startsWith(`${prefix}ping`)) {
+            msg.channel.send('Pong!');
+        }
+        else if (msg.content.startsWith(`${prefix}ding`)) {
+            msg.channel.send('Dong!');
+        }
+        else if (msg.content.startsWith(`${prefix}uwu`)) {
+            msg.channel.send('OwO');
+        }
+        else if (msg.content.startsWith(`${prefix}owo`)) {
+            msg.channel.send('UwU');
+        }
+        else if (msg.content.startsWith(`${prefix}guwop`)) {
+            msg.channel.send('Dope fiend Willie used to finger fuck my rims!\n');
+            msg.channel.send('I wanna fuck tiny lil dirty ass.');
+        }
+        // This is sending an empty message for some reason...
+        else if (msg.content === `${prefix}gucci`) {
+            msg.channel.send([gucci_mane.content]);
+        }
+        else if (msg.content === `${prefix}server`) {
+            msg.channel.send(`This sever's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
+        }
+        else if (msg.content === `${prefix}user-info`) {
+            msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
+        }
+    } catch (err) {
+        console.log('Error-> ' + err);
     }
     
 });
