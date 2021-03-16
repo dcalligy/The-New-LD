@@ -21,6 +21,11 @@ client.on('ready', () => {
 client.on('message', (msg) => {
     try{
         if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+
+        const args = msg.content.slice(prefix.length).trim().split(' ');
+        // we can use the new `command` variable, this makes it easier to manage things
+        // we can switch other commands to this format as well.
+        const command = args.shift().toLowerCase();
         
         // Talk back to ya boi
         console.log(`${msg.channel.guild ? msg.channel.guild.name : 'DM'}`
@@ -50,6 +55,14 @@ client.on('message', (msg) => {
         }
         else if (msg.content === `${prefix}user-info`) {
             msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
+        }
+        else if (command === 'args-info') {
+            if(!args.length) {
+                if (!args.length) {
+                    return msg.channel.send(`You didn't provide any arguments. ${msg.author}`);
+                }
+                msg.channel.send(`Command name: ${command}\nArguements: ${args}`);
+            }
         }
     } catch (err) {
         console.log('Error-> ' + err);
