@@ -94,7 +94,7 @@ client.on('message', (msg) => {
         }
         msg.channel.bulkDelete(amount, true).catch(err => {
             console.error(err);
-            msg.channel.send('There was an erro trying to prun messages in this channel!');
+            msg.channel.send('There was an error trying to prun messages in this channel!');
         });
     }
     
