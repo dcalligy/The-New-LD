@@ -85,6 +85,18 @@ client.on('message', (msg) => {
         // by default, discord.js will `.join()` the array with `\n`
         msg.channel.send(avatar_list);
     }
+    else if (command === 'prune') {
+        const amount = parseInt(args[0] + 1);
+        if (isNaN(amount)) {
+            return msg.reply('That doesn\'t seem to be a valid number.');
+        } else if (amount <= 1|| amount > 100) {
+            return msg.reply('You need to input a number between 1 and 99');
+        }
+        msg.channel.bulkDelete(amount, true).catch(err => {
+            console.error(err);
+            msg.channel.send('There was an erro trying to prun messages in this channel!');
+        });
+    }
     
 });
 
