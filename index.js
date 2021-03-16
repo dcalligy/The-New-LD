@@ -64,6 +64,27 @@ client.on('message', (msg) => {
         }
         msg.channel.send(`First arguement: ${args[0]}`);
     }
+    else if (command === 'kick') {
+        if (!msg.mentions.users.size) {
+            return msg.reply('You need to tag a user in order to kick them!');
+        }
+        // grab the "first" mentioned user from the message
+        // this will return a `User` object, just like `msg.author`
+        const tagged_user = msg.mentions.users.first();
+        msg.channel.send(`You wanted to kick: ${tagged_user.username}`);
+    }
+    else if (command === 'avatar') {
+        if (!msg.mentions.users.size) {
+            return msg.channel.send(`Your avatar: <${msg.author.displayAvatarURL({format: "png", dynamic: true })}`);
+        }
+        const avatar_list = msg.mentions.users.map(user => {
+            return `${user.username}'s avatar: <${user.displayAvatarURL({ format: png, dynamic: true })}>`;
+        });
+
+        // send the entire array of strings as a message
+        // by default, discord.js will `.join()` the array with `\n`
+        msg.channel.send(avatar_list);
+    }
     
 });
 
