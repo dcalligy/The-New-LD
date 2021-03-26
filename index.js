@@ -6,7 +6,7 @@ const { prefix, token } = require('./config.json');
 //const emojis = require('./emojis.js');
 
 const client = new Discord.Client();
-client.commmands = new Discord.Collection();
+client.commands = new Discord.Collection();
 
 // we need to create an array of objects i think
 // also need to figure out how to get this to work in a json file?
@@ -18,7 +18,7 @@ const gucci_mane = [
 
 // return an array of all the file names in our directory to dynamically
 // set our commands to the Collection we made above.
-for (const file of commandFiles) {
+for (const file of commandFiles) { // this shit not working...
     const command = require(`./commands/${file}`);
     // set a new item in the Collection
     // with the key as the command name and the value as the exported module
