@@ -1,10 +1,12 @@
 'use strict';
+const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 //const prefix = require('./config.json');
 //const emojis = require('./emojis.js');
 
 const client = new Discord.Client();
+client.commmands = new Discord.Collection();
 
 // we need to create an array of objects i think
 // also need to figure out how to get this to work in a json file?
@@ -13,6 +15,15 @@ const gucci_mane = [
     "Overdose of sauce, no meat, just sauce",
     "I pushed a lot of pills, a lot of peas, a lot of powder, It's Gucci Mane La Fleur and jiggalo ya cowards."
 ];
+
+// return an array of all the file names in our directory to dynamically
+// set our commands to the Collection we made above.
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+    // set a new item in the Collection
+    // with the key as the command name and the value as the exported module
+    client.commands.set(command.name, command);
+}
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
