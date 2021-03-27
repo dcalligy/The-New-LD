@@ -8,6 +8,8 @@ const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
 // we need to create an array of objects i think
 // also need to figure out how to get this to work in a json file?
 // maybe we create another json file? lyrics.json or something?
@@ -18,7 +20,7 @@ const gucci_mane = [
 
 // return an array of all the file names in our directory to dynamically
 // set our commands to the Collection we made above.
-for (const file of commandFiles) { // this shit not working...
+for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     // set a new item in the Collection
     // with the key as the command name and the value as the exported module
