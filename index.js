@@ -2,7 +2,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
-const { DH_NOT_SUITABLE_GENERATOR } = require('constants');
 //const prefix = require('./config.json');
 //const emojis = require('./emojis.js');
 
