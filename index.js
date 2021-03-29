@@ -41,74 +41,43 @@ client.on('message', (msg) => {
     console.log(`${msg.channel.guild ? msg.channel.guild.name : 'DM'}`
                 + `# ${msg.channel.name} ${msg.author.tag}: ${msg.content}`);
     if (command === 'ping') {
-        msg.channel.send('Pong!');
+        client.commands.get('ping').execute(msg, args);
     }
     else if (command === 'ding') {
-        msg.channel.send('Dong!');
+        client.commands.get('ding').execute(msg, args);
     }
     else if (command === 'uwu') {
-        msg.channel.send('OwO');
+        client.commands.get('uwu').execute(msg, args);
     }
     else if (command === 'owo') {
-        msg.channel.send('UwU');
+        client.commands.get('owo').execute(msg, args);
     }
     else if (command === 'guwop') {
-        msg.channel.send('Dope fiend Willie used to finger fuck my rims!\n');
-        msg.channel.send('I wanna fuck tiny lil dirty ass.');
+        client.commands.get('guwop').execute(msg, args);
     }
     // This is sending an empty message for some reason...
     else if (command === 'gucci') {
         msg.channel.send([gucci_mane.content]);
     }
     else if (command === 'server') {
-        msg.channel.send(`This sever's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
+        client.commands.get('server').execute(msg, args);
     }
     else if (command === 'user-info') {
-        msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
+        client.commands.get('user-info').execute(msg, args);
     }
     // we can use the new `command` variable, this makes it easier to manage things
     // we can switch other commands to this format as well.
     else if (command === 'args-info') {
-        if (!args.length) {
-            return msg.channel.send(`You didn't provide any arguments. ${msg.author}`);
-        }
-        else if (args[0] === 'foo') {
-            return msg.channel.send('bar');
-        }
-        msg.channel.send(`First arguement: ${args[0]}`);
+        client.commands.get('args-info').execute(msg, args);
     }
     else if (command === 'kick') {
-        if (!msg.mentions.users.size) {
-            return msg.reply('You need to tag a user in order to kick them!');
-        }
-        // grab the "first" mentioned user from the message
-        // this will return a `User` object, just like `msg.author`
-        const tagged_user = msg.mentions.users.first();
-        msg.channel.send(`You wanted to kick: ${tagged_user.username}`);
+        client.commands.get('kick').execute(msg, args);
     }
     else if (command === 'avatar') {
-        if (!msg.mentions.users.size) {
-            return msg.channel.send(`Your avatar: <${msg.author.displayAvatarURL({format: "png", dynamic: true })}`);
-        }
-        const avatar_list = msg.mentions.users.map(user => {
-            return `${user.username}'s avatar: <${user.displayAvatarURL({ format: png, dynamic: true })}>`;
-        });
-
-        // send the entire array of strings as a message
-        // by default, discord.js will `.join()` the array with `\n`
-        msg.channel.send(avatar_list);
+        client.commands.get('avatar').execute(msg, args);
     }
     else if (command === 'prune') {
-        const amount = parseInt(args[0] + 1);
-        if (isNaN(amount)) {
-            return msg.reply('That doesn\'t seem to be a valid number.');
-        } else if (amount <= 1|| amount > 100) {
-            return msg.reply('You need to input a number between 1 and 99');
-        }
-        msg.channel.bulkDelete(amount, true).catch(err => {
-            console.error(err);
-            msg.channel.send('There was an error trying to prune messages in this channel!');
-        });
+        client.commands.get('prune').execute(msg, args);
     }
     
 });
