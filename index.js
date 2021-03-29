@@ -2,6 +2,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
+const { DH_NOT_SUITABLE_GENERATOR } = require('constants');
 //const prefix = require('./config.json');
 //const emojis = require('./emojis.js');
 
@@ -40,46 +41,19 @@ client.on('message', (msg) => {
     // Talk back to ya boi
     console.log(`${msg.channel.guild ? msg.channel.guild.name : 'DM'}`
                 + `# ${msg.channel.name} ${msg.author.tag}: ${msg.content}`);
-    if (command === 'ping') {
-        client.commands.get('ping').execute(msg, args);
-    }
-    else if (command === 'ding') {
-        client.commands.get('ding').execute(msg, args);
-    }
-    else if (command === 'uwu') {
-        client.commands.get('uwu').execute(msg, args);
-    }
-    else if (command === 'owo') {
-        client.commands.get('owo').execute(msg, args);
-    }
-    else if (command === 'guwop') {
-        client.commands.get('guwop').execute(msg, args);
-    }
-    // This is sending an empty message for some reason...
-    else if (command === 'gucci') {
-        msg.channel.send([gucci_mane.content]);
-    }
-    else if (command === 'server') {
-        client.commands.get('server').execute(msg, args);
-    }
-    else if (command === 'user-info') {
-        client.commands.get('user-info').execute(msg, args);
-    }
-    // we can use the new `command` variable, this makes it easier to manage things
-    // we can switch other commands to this format as well.
-    else if (command === 'args-info') {
-        client.commands.get('args-info').execute(msg, args);
-    }
-    else if (command === 'kick') {
-        client.commands.get('kick').execute(msg, args);
-    }
-    else if (command === 'avatar') {
-        client.commands.get('avatar').execute(msg, args);
-    }
-    else if (command === 'prune') {
-        client.commands.get('prune').execute(msg, args);
+
+    if (!client.commands.has(command)) return;
+    try {
+        client.commands.get(command).execute(msg, args);
+    } catch (err) {
+        console.log(err);
+        msg.reply('There was an error trying to execute that command!');
     }
     
+    // This is sending an empty message for some reason...
+    // else if (command === 'gucci') {
+    //    msg.channel.send([gucci_mane.content]);
+    //}
 });
 
 // This shit no work either...
