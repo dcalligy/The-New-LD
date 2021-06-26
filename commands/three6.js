@@ -1,7 +1,7 @@
 
 // figure this one out champ?
 module.exports = {
-    name: 'triple6',
+    name: 'tripl5',
     description: 'Crooked by da book',
     execute(msg, args) {
         const three_six_lyrics = [
