@@ -30,10 +30,10 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    console.log(`Bot: Hosting ${client.guild.name}`);
 });
 
 client.on('message', (msg) => {
+    console.log(`Bot: Hosting ${client.guild.name}`);
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
     const args = msg.content.slice(prefix.length).trim().split(/ +/); // why do we do this again?
