@@ -1,4 +1,4 @@
-// figure this one out champ?
+
 module.exports = {
     name: 'kick',
     description: 'Fake b!',

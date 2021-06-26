@@ -1,5 +1,3 @@
-
-// figure this one out champ?
 module.exports = {
     name: 'snoop',
     description: 'Doggystyle',

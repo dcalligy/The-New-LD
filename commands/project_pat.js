@@ -1,5 +1,5 @@
 
-// figure this one out champ?
+
 module.exports = {
     name: 'pat',
     description: 'Crooked by da book',

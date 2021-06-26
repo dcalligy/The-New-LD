@@ -1,4 +1,3 @@
-// figure this one out champ?
 module.exports = {
     name: 'wutang',
     description: 'For da children',
@@ -64,7 +63,7 @@ module.exports = {
           'Crazy flamboyant for the rap enjoyment\nMy clan increase like black unemployment',
           'The Wu is too slammin\' for these Cold Killin\' labels\nSome ain\'t had hits since I seen Aunt Mabel\nBe doin\' artists in like Cain did Abel\nNow they money\'s gettin\' stuck to the gum under the table',
           'Now that thought was just as bright as a 20-watt light bulb\nShould\'ve pumped it when I rocked it\nNiggas so stingy they got short arms and deep pockets'
-      ]
+      ];
         const randomAnswer = wu_tang_lyrics[Math.floor(Math.random() * wu_tang_lyrics.length)];
         msg.channel.send(randomAnswer);
     }

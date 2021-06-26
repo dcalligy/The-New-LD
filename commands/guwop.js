@@ -1,4 +1,3 @@
-// figure this one out champ?
 module.exports = {
     name: 'guwop',
     description: 'It\'s gucci time!',

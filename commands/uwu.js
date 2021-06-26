@@ -1,4 +1,4 @@
-module.exports = { 
+module.exports = {
     name: 'uwu',
     description: 'UwU',
     execute(msg, args) {

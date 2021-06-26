@@ -1,12 +1,8 @@
-
-// figure this one out champ?
 module.exports = {
     name: 'random',
     description: 'Crooked by da book',
     execute(msg, args) {
-
-      const
-      random_lyrics = [
+      const random_lyrics = [
           'Like a pigeon in the sky, I just shitted on your ride',
           'I’m far from broke, got enough bread And mad hoes, ask Beavis I get nothing Butthead',
           'I jumped out the Lincoln, left him stinkin. Put his brains in the street. Now you can see what he was just thinkin',

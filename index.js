@@ -2,8 +2,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
-//const prefix = require('./config.json');
-//const emojis = require('./emojis.js');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -26,7 +24,7 @@ client.on('ready', () => {
 client.on('message', (msg) => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
-    const args = msg.content.slice(prefix.length).trim().split(/ +/);
+    const args = msg.content.slice(prefix.length).trim().split(/ +/); // why do we do this again?
     const command = args.shift().toLowerCase();
 
     // Talk back to ya boi
@@ -40,12 +38,9 @@ client.on('message', (msg) => {
         console.log(err);
         msg.reply('There was an error trying to execute that command!');
     }
-
-    // This is sending an empty message for some reason...
-    // else if (command === 'gucci') {
-    //    msg.channel.send([gucci_mane.content]);
-    //}
 });
+
+// Figure out away to log the amount of servers the bot is in.
 
 // This shit no work either...
 client.on('guildMemberAdd', member => {
