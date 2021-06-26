@@ -38,7 +38,7 @@ client.on('countServers', () => {
   for (const server in servers) {
     console.log(server.name);
   }
-})
+});
 
 client.on('message', (msg) => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
