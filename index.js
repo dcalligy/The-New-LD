@@ -10,14 +10,6 @@ client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-// we need to create an array of objects i think
-// also need to figure out how to get this to work in a json file?
-// maybe we create another json file? lyrics.json or something?
-const gucci_mane = [
-    "Overdose of sauce, no meat, just sauce",
-    "I pushed a lot of pills, a lot of peas, a lot of powder, It's Gucci Mane La Fleur and jiggalo ya cowards."
-];
-
 // return an array of all the file names in our directory to dynamically
 // set our commands to the Collection we made above.
 for (const file of commandFiles) {
@@ -36,7 +28,7 @@ client.on('message', (msg) => {
 
     const args = msg.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
-    
+
     // Talk back to ya boi
     console.log(`${msg.channel.guild ? msg.channel.guild.name : 'DM'}`
                 + `# ${msg.channel.name} ${msg.author.tag}: ${msg.content}`);
@@ -48,7 +40,7 @@ client.on('message', (msg) => {
         console.log(err);
         msg.reply('There was an error trying to execute that command!');
     }
-    
+
     // This is sending an empty message for some reason...
     // else if (command === 'gucci') {
     //    msg.channel.send([gucci_mane.content]);
