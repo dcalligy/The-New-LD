@@ -52,4 +52,4 @@ client.on('guildMemberAdd', member => {
     channel.send(`Welcome to the server, ${member}`);
 });
 
-client.login(process.evn.token);
+client.login(process.env.token);
