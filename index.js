@@ -30,14 +30,7 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.on('countServers', () => {
-  let servers = list(client.servers);
-  console.log(`It's Gucci Time! Young LD is connected to ${servers.toString().length}` + `servers: `);
-  for (const server in servers) {
-    console.log(server.name);
-  }
+    console.log(`Bot: Hosting ${client.user.size} users, in ${client.channel.size} of ${client.guilds.name} guilds.`);
 });
 
 client.on('message', (msg) => {
