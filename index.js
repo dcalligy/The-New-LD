@@ -6,6 +6,17 @@ const { prefix } = require('./config.json');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
+// Markov chain stuff
+// default dictionary
+// remove puncuation from a given string
+// Generates the trigrams of an array of elements. For example, if `data = [a, b, c, d]` then the output will be `[[a,b,c], [b,c,d]]`.
+/*
+Generates the n-grams of an array of elements. For example, if `data = [a, b, c, d]` and
+    `degree = 2` then the output will be `[[a,b], [b,c], [c,d]]`. This is just a generic
+    version of the `get_trigrams` function, here for reference.
+*/
+// Given a dictionary of keys and weights, choose a random key based on its weight.
+
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 // return an array of all the file names in our directory to dynamically
@@ -20,6 +31,14 @@ for (const file of commandFiles) {
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
+
+client.on('countServers', () => {
+  let servers = list(client.servers);
+  console.log(`It's Gucci Time! Young LD is connected to ${servers.toString().length}` + `servers: `);
+  for (const server in servers) {
+    console.log(server.name);
+  }
+})
 
 client.on('message', (msg) => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
