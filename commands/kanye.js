@@ -13,8 +13,7 @@ module.exports = {
         'Eatin Asian pussy, all I need was sweet and sour sauce',
         'I just talked to Jesus. He said “What up, Yeezus?!?” I said “Shit, I’m chillin tryna stack these millions',
         'Mayonnaise-colored Benz, I push Miracle Whips'
-        'Now, if I fuck this model.\n' + 'And she just bleached her asshole\n' +
-        'And I get bleach on my T-shirt\n' + 'I\'ma feel like an asshole'
+        // 'Now, if I fuck this model.\n And she just bleached her asshole\n And I get bleach on my T-shirt\n I\'ma feel like an asshole'
       ];
       const randomAnswer = kanye_lyrics[Math.floor(Math.random() * kanye_lyrics.length)];
       msg.channel.send(randomAnswer);
