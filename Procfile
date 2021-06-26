@@ -1,1 +1,1 @@
-web: node index.js
+worker: bash push.sh
