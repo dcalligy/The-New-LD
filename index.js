@@ -30,7 +30,7 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    console.log(`Bot: Hosting ${client.user.size} users, in ${client.channel.size} of ${client.guilds.name} guilds.`);
+    console.log(`Bot: Hosting ${client.user.length} users, in ${client.channel.length} of ${client.guilds} guilds.`);
 });
 
 client.on('message', (msg) => {
