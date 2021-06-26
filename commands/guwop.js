@@ -3,7 +3,7 @@ module.exports = {
     name: 'guwop',
     description: 'It\'s gucci time!',
     execute(msg, args) {
-        let gucci_mane = [
+        const gucci_mane = [
           'Overdose of sauce, no meat, just sauce',
           'I pushed a lot of pills, a lot of peas, a lot of powder, It\'s Gucci Mane La Fleur and jiggalo ya cowards.',
           'Gucci Mane broke; pussy nigga is ya stupid?',
@@ -35,7 +35,7 @@ module.exports = {
           'Trap boys get bricks, athletes get trophies Gucci mane got cake, it\'s my birthday party Want a sweet 16? Thats two times forty!!',
           'Gucci so flossy, all my broads are bossy. Head til’ I’m nauseous, they keep me exhausted'
         ];
-        let randomAnswer = gucci_mane[Math.floor(Math.random() * gucci_mane.length)];
+        const randomAnswer = gucci_mane[Math.floor(Math.random() * gucci_mane.length)];
         msg.channel.send(randomAnswer);
     }
 }
