@@ -57,7 +57,7 @@ client.on('message', (msg) => {
 // Figure out away to log the amount of servers the bot is in.
 
 // This shit no work either...
-client.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', (member) => {
     // Send the message to a designated channel on a server.
     const channel = member.guild.channels.cache.find(ch => ch.name === 'general');
     // Do nothing if the channel wasn't found on this server
