@@ -30,11 +30,12 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`Here: ${guild.available}`);
 });
 
-client.guilds.forEach((guild) => {
+/*client.guild.forEach((guild) => {
     console.log(`The bot is live in ${guild.name}`);
-});
+});*/
 
 
 client.on('message', (msg) => {
