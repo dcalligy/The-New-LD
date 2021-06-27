@@ -4,6 +4,7 @@ const Discord = require('discord.js');
 const { prefix } = require('./config.json');
 
 const client = new Discord.Client();
+const guild = new Discord.Guild(client, data);
 client.commands = new Discord.Collection();
 
 // Markov chain stuff
