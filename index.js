@@ -1,10 +1,9 @@
 'use strict';
 const fs = require('fs');
 const Discord = require('discord.js');
-const { prefix } = require('./config.json');
+const { prefix,token } = require('./config.json');
 
 const client = new Discord.Client();
-const guild = new Discord.Guild();
 client.commands = new Discord.Collection();
 
 // Markov chain stuff
@@ -31,16 +30,12 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    console.log(`Here: ${guild.available}`);
+    const Guilds = client.guilds.cache.map(guild => guild.name); // need to split on a \n
+    console.log(`We are in ${Guilds.length}...\nNames of Guilds: ${Guilds}`);
 });
 
-/*client.guild.forEach((guild) => {
-    console.log(`The bot is live in ${guild.name}`);
-});*/
-
-
 client.on('message', (msg) => {
-    // console.log(`Bot: Hosting ${client.guild.name}`);
+    console.log(`Here: ${msg.guild.name}`);
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
     const args = msg.content.slice(prefix.length).trim().split(/ +/); // why do we do this again?
@@ -71,4 +66,4 @@ client.on('guildMemberAdd', member => {
     channel.send(`Welcome to the server, ${member}`);
 });
 
-client.login(process.env.token);
+client.login(token);
