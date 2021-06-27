@@ -1,3 +1,4 @@
+// Needs to be fixed.
 module.exports = {
   name: 'commands',
   description: 'List of commands',

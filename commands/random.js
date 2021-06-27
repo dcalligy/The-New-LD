@@ -1,6 +1,6 @@
 module.exports = {
     name: 'random',
-    description: 'Crooked by da book',
+    description: 'randies',
     execute(msg, args) {
       const random_lyrics = [
           'Like a pigeon in the sky, I just shitted on your ride',

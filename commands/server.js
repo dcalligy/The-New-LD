@@ -1,3 +1,4 @@
+// dont think this works
 module.exports = {
 	name: 'server',
 	description: 'Display info about this server.',
