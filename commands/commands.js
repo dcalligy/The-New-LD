@@ -2,8 +2,7 @@ module.exports = {
   name: 'commands',
   description: 'List of commands',
   execute(msg, args) {
-    msg.channel.send(`
-      +avatar
+    msg.channel.send(`+avatar
       +bigl
       +ding
       +droctagon
@@ -24,6 +23,6 @@ module.exports = {
       +triple6
       +user-info
       +wutang
-    `)
+    `);
   }
 }
