@@ -32,6 +32,11 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.guilds.forEach((guild) => {
+    console.log(`The bot is live in ${guild.name}`);
+});
+
+
 client.on('message', (msg) => {
     // console.log(`Bot: Hosting ${client.guild.name}`);
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
