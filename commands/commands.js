@@ -3,27 +3,15 @@ module.exports = {
   name: 'commands',
   description: 'List of commands',
   execute(msg, args) {
-    msg.channel.send(`+avatar
-      +bigl
-      +ding
-      +droctagon
-      +40water
-      +gibbs
-      +guwop
-      +kanye
-      +kick
-      +nas
-      +owo
-      +uwu
-      +ping
-      +pat
-      +prune
-      +random
-      +server
-      +snoop
-      +triple6
-      +user-info
-      +wutang
-    `);
+    const embed = new Discord.MessageEmbed()
+      .setTitle('Commands list')
+      .setColor('#DAF7A6')
+      .addFields(
+        {
+          name: 'Test 1',
+          value: "`line 1`\n `line 2` \n `line3`"
+        }
+      )
+      msg.channel.send(embed);
   }
 }
