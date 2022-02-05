@@ -3,9 +3,9 @@
 // we decided to create module files for each command we use
 // helps reduce clutter, I guess...
 module.exports = {
-    name: 'ping',
-    description: 'Ping!',
-    execute(msg, args) {
-        msg.channel.send('Pong!');
-    }
+  name: 'ping',
+  description: 'Ping!',
+  execute(msg, args) {
+    msg.channel.send('Pong!');
+  }
 }
