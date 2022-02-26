@@ -1,7 +1,7 @@
 module.exports = {
   name: 'wutang',
   description: 'For da children',
-  execute(msg, args) {
+  execute: async (msg, args) => {
     const wu_tang_lyrics = [
       'Ghostface catch the blast of a hype verse\nMy Glock burst, leave in a hearse, I did worse',
       'Aww shit, Wu-Tang Clan spark the wicks, an\'\nHowever I master the trick just like Nixon',

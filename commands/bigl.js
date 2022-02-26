@@ -1,7 +1,7 @@
 module.exports = {
   name: 'bigl',
   description: 'Lifestyles of da poor and dangerous',
-  execute(msg, args) {
+  execute: async (msg, args) => {
     const big_L_lyrics = [
       'I knocked out so many teeth the tooth fairy went bankrupt',
       'Fucking punk you ain\'t a leader, nobody followed you, you was never shit your mother should\'ve swallowed you...',

@@ -37,7 +37,7 @@ client.on('ready', () => {
 });
 
 client.on('message', (msg) => {
-  console.log(`Here: ${msg.guild.name}`);
+  console.log(`We are messaging in: ${msg.guild.name}`);
   if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
   const args = msg.content.slice(prefix.length).trim().split(/ +/); // why do we do this again?

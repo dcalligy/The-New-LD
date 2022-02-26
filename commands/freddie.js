@@ -1,7 +1,7 @@
 module.exports = {
   name: 'gibbs',
   description: 'Freddie Kane',
-  execute(msg, args) {
+  execute: async (msg, args) => {
     const freddie_gibbs_lyrics = [
       '24 hours to live, what would you do?\nJust get high, treat everyday like my birthday, smoke with the crew',
       'Before I check out, let me diamond my neck out\nBlow a mil on my niggas, fuck bitches like I was fresh out',

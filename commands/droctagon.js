@@ -1,7 +1,7 @@
 module.exports = {
   name: 'droctagon',
   description: 'DrOctagynocologist',
-  execute(msg, args) {
+  execute: async(msg, args) => {
     const doc_oct_lyrics = [
       'Fuck my pussy, Doctor!\n',
       'I crank up lyrical flows, spit Spats, what\'s that?\nThe pattern records, don\'t touch the DATs, yo',

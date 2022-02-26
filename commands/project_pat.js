@@ -3,7 +3,7 @@
 module.exports = {
   name: 'pat',
   description: 'Crooked by da book',
-  execute(msg, args) {
+  execute: async (msg, args) => {
     const project_pat_lyrics =[
       'I ain\'t goin\' back to jail, I ain\'t goin\' back to jail\nI got mo\' pussy to swell, and mo\' dreams to tell',
       'Bullets do fly through air when them guns p-poppin\'\nPistol swang to ya mouth, then the blood is gushin\'',

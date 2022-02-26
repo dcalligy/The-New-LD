@@ -1,7 +1,7 @@
 module.exports = {
   name: 'kanye',
   description: 'ye',
-  execute(msg, args) {
+  execute: async (msg, args) => {
     const kanye_lyrics = [
       'The same people that tried to blackball me forgot about two things: my black balls',
       'What’s a black Beatle anyway? A fucking roach? I guess that’s why they got me sitting in fucking coach',

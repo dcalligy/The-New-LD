@@ -2,7 +2,7 @@
 module.exports = {
   name: 'kick',
   description: 'Fake b!',
-  execute(msg, args) {
+  execute: async (msg, args) => {
     if (!msg.mentions.users.size) {
       return msg.reply('You need to tag a user in order to kick them!');
     }

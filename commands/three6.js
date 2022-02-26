@@ -1,7 +1,7 @@
 module.exports = {
   name: 'triple6',
   description: 'Mystic Styles',
-  execute(msg, args) {
+  execute: async (msg, args) => {
     const three_six_lyrics = [
       'Bitch don\'t play dumb\nStick out your tongue\nAnd let me take a plunge\nFor plenty you don\'t have to suck your thumb\nI got yum-yum',
       'Slob on my knob\nLike corn on the cob\nCheck in with me\nAnd do your job\nlay on the bed\nAnd give me head\nDon\'t have to ask\nDon\'t have to beg',

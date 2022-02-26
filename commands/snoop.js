@@ -1,7 +1,7 @@
 module.exports = {
   name: 'snoop',
   description: 'Doggystyle',
-  execute(msg, args) {
+  execute: async (msg, args) => {
     const snoop_dogg_lyrics = [
       'He fucked the fleas off a bitch.\nHe shaked the ticks off his dick.\nAnd in the booty, he buries his motherfuckin\' bone.\nAnd if there\'s any left over\nHe\'ll roll over and take a doggy bag home',
       'Shit, I got a pocket full of rubbers and my homeboys do too\nSo turn off the lights and close the doors\nBut (but what?) we don\'t love them hoes, yeah\nSo we gon\' smoke a ounce to this\nG\'s up, hoes down, while you motherfuckers bounce to this.',
