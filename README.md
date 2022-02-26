@@ -45,3 +45,9 @@ Let me know what other artist or lyrics I should add.
 * OJ Da Juice Man
 * 2 Chainz
 * Big K.R.I.T
+
+## TODO
+- [ ] Clean up the command folder
+- [ ] Figure out the list logic
+- [ ] Add the Markov chain functionality back
+- [ ] Host on Raspberry Pi
