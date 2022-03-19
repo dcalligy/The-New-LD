@@ -1,7 +1,7 @@
 module.exports = {
   name: 'prune',
   description: 'Prune\'s up to 99 messages',
-  execute: async (msg, args) => {
+  execute: (msg, args) => {
     const amount = parseInt(args[0] + 1);
     if (isNaN(amount)) {
       return msg.reply('That doesn\'t seem to be a valid number.');

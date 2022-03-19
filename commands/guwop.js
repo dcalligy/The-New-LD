@@ -1,7 +1,7 @@
 module.exports = {
   name: 'guwop',
   description: 'It\'s gucci time!',
-  execute: async (msg, args) => {
+  execute: (msg, args) => {
     const gucci_mane = [
       'Overdose of sauce, no meat, just sauce',
       'I pushed a lot of pills, a lot of peas, a lot of powder, It\'s Gucci Mane La Fleur and jiggalo ya cowards.',

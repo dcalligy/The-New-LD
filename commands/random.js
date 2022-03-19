@@ -1,7 +1,7 @@
 module.exports = {
   name: 'random',
   description: 'randies',
-  execute: async (msg, args) => {
+  execute: (msg, args) => {
     const random_lyrics = [
       'Like a pigeon in the sky, I just shitted on your ride',
       'I’m far from broke, got enough bread And mad hoes, ask Beavis I get nothing Butthead',

@@ -1,7 +1,7 @@
 module.exports = {
   name: '40water',
   description: 'Goon with the Spoon',
-  execute: async(msg, args) => {
+  execute: (msg, args) => {
     const E40_lyrics = [
       'Ever told on a nigga? (nope)\nEver squeezed a trigger? (yup)',
       'Ever set a nigga up? (nope)\nEver helped a brother out when he was down on his luck? (yup)',

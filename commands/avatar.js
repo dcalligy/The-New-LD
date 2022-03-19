@@ -3,7 +3,7 @@ const ping = require("./ping")
 module.exports = {
   name: 'avatar',
   description: 'Displays the avatar picture of users who call the command',
-  execute: async (msg, args) => {
+  execute: (msg, args) => {
     if (!msg.mentions.users.size) {
       return msg.channel.send(`Your avatar: <${msg.author.displayAvatarURL({format: "png", dynamic: true })}`);
     }

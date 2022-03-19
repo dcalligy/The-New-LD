@@ -1,7 +1,7 @@
 module.exports = { 
   name: 'owo',
   description: 'OwO',
-  execute: async (msg, args) => {
+  execute: (msg, args) => {
     msg.channel.send('UwU');
   }
 }

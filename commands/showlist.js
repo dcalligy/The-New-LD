@@ -1,10 +1,10 @@
-const list = require('./list.js');
+const list = require('./newItem.js');
 
 module.exports = {
   name: 'showlist',
   description: 'Show the list you created',
-  execute: async (msg, args) => {
-    let results = await list.execute(msg, args);
+  execute: (msg, args) => {
+    const results = list();
     console.log('results: ', results);
   }
 }

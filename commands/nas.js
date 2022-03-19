@@ -1,7 +1,7 @@
 module.exports = {
   name: 'nas',
   description: 'illmatic',
-  execute: async (msg, args) => {
+  execute: (msg, args) => {
     const nas_lyrics = [
       'Rappers, I monkey flip \'em with the funky rhythm I be kickin\'\nMusician inflictin\' composition of pain\nI\'m like Scarface sniffin\' cocaine\nHoldin\' an M16, see with the pen I\'m extreme',
       'It drops deep as it does in my breath\nI never sleep—cause sleep is the cousin of death\nBeyond the walls of intelligence, life is defined.\nI think of crime when I\'m in a New York state of mind',

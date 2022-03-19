@@ -2,7 +2,7 @@
 module.exports = {
   name: 'server',
   description: 'Display info about this server.',
-  execute: async (msg, args) => {
+  execute: (msg, args) => {
     msg.channel.send(`Server name: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
   },
 };
