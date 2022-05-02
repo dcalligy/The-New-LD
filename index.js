@@ -2,12 +2,13 @@
 
 const fs = require('fs');
 const {Client, Intents, Collection} = require('discord.js');
-const { prefix, token } = require('./config.json');
+const { prefix, token, mongoDB } = require('./config.json');
+const mongoose = require('mongoose');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 client.commands = new Collection();
 
-// Markov chain stuff
+// TODO: Markov chain stuff
 // default dictionary
 // remove punctuation from a given string
 // Generates the trigrams of an array of elements. For example, if `data = [a, b, c, d]` then the output will be `[[a,b,c], [b,c,d]]`.
@@ -30,8 +31,15 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-client.on('ready', () => {
+client.on('ready', async () => {
   console.log(`Logged in as ${client.user.tag}!`);
+  // Mongoose connection for the list commands.
+  await mongoose.connect(
+    mongoDB,
+    {
+      keepAlive: true,
+    }
+  );
   const Guilds = client.guilds.cache.map(guild => guild.name); // need to split on a \n
   console.log(`We are in ${Guilds.length}...\nNames of Guilds: ${Guilds}`);
 });
