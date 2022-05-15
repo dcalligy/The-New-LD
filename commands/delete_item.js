@@ -11,7 +11,7 @@ module.exports = {
         category: args[0],
         list_item: args.slice(1).join(' '),
       });
-      console.log('delete_item: ', delete_item);
+      msg.channel.send('Deleting... ' + delete_item);
     }
   },
 }

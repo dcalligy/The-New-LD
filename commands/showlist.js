@@ -14,7 +14,6 @@ module.exports = {
         console.log('r: ', r);
         return r.list_item;
       });
-      console.log('show_results: ', results);
       msg.channel.send('This is what I found mafk: ' + show_results);
     }
   }
