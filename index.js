@@ -40,6 +40,7 @@ client.on('ready', async () => {
       keepAlive: true,
     }
   );
+  console.log('We are connected to our MongoDB');
   const Guilds = client.guilds.cache.map(guild => guild.name); // need to split on a \n
   console.log(`We are in ${Guilds.length}...\nNames of Guilds: ${Guilds}`);
 });

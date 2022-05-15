@@ -1,23 +1,18 @@
-const newItem = require('./newItem.js');
+const List = require('../models/List');
 
 module.exports = {
-  name: 'addlist',
+  name: 'additem',
   description: 'Creates a list',
   execute: (msg, args) => {
-    console.log('args: ', args.length);
     if (args.length < 2) {
-      msg.channel.send('+addlist [category] [list item]');
+      msg.channel.send('+additem [category] [list item]');
     } else {
-      const array = [];
-      let obj = {
+      const newItem = new List({
         category: args[0],
-        item: args.slice(1).join(' ')
-      };
-      array.push(obj);
-      console.log('obj: ' + obj.category + ' list: ' + obj.item);
-      msg.channel.send('This is your list: \n' + obj.category + '\n list: ' + obj.item);
-      msg.channel.send('Category: ' + obj.category);
-      newItem(array);
+        list_item: args.slice(1).join(' '),
+      });
+      newItem.save();
+      msg.channel.send('Saving the following list: \n' + args[0] + '\n item: ' + args.slice(1).join(' '));
     }
   }
 }
