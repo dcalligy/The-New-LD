@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const config = require('../config.json');
 module.exports = {
-  name: 'commands',
+  name: 'help',
   description: 'List all of my commands or info about a specific command.',
   alias: ['help'],
   usage: '[command name]',
