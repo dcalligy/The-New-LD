@@ -12,7 +12,7 @@ module.exports = {
     });
     const embeddedMsg = new Discord.MessageEmbed()
       .setTitle('Command List')
-      .setColor('#DAF7A6')
+      .setColor('#FF2553')
       .addFields(
         {
           name: 'You can run the following commands:', value: msg_value
