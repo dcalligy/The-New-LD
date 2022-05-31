@@ -1,4 +1,5 @@
 const List = require('../models/List');
+const utils = require('../utils/embedMessage');
 
 module.exports = {
   name: 'showlist',
@@ -11,10 +12,15 @@ module.exports = {
         category: args[0],
       });
       const show_results = results.map((r) => {
-        console.log('r: ', r);
         return r.list_item;
       });
-      msg.channel.send('This is what I found mafk: ' + show_results);
+      let message;
+      if (show_results.length < 1) {
+        message = utils.embedMessage('List found..', '#FF2553', 'OwO', 'No results found');
+      } else {
+        message = utils.embedMessage(`${args[0]} list found...`, '#FF2553', 'UwU', show_results);
+      }
+      msg.channel.send(message);
     }
   }
 }
