@@ -184,7 +184,7 @@ module.exports = {
     for (let lyric of lyrics) {
       randomTextGenerator.learn(lyric);
     }
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < lyrics.length; i++) {
       random = randomTextGenerator.generate();
     }
     msg.channel.send(random);
