@@ -8,6 +8,10 @@ const mongoose = require('mongoose');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 client.commands = new Collection();
 
+// TODO: Create a file that houses all of the lyrics in an object type structure
+// Maybe use a class of some sort? Import that file in the individual commands and then use
+// them accordingly. Also, we need to restructure the project to be a little cleaner.
+
 // TODO: Markov chain stuff
 // default dictionary
 // remove punctuation from a given string
