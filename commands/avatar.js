@@ -7,6 +7,7 @@ module.exports = {
     if (!msg.mentions.users.size) {
       return msg.channel.send(`Your avatar: <${msg.author.displayAvatarURL({format: "png", dynamic: true })}`);
     }
+
     const avatar_list = msg.mentions.users.map(user => {
       return `${user.username}'s avatar: <${user.displayAvatarURL({ format: png, dynamic: true })}>`;
     });
