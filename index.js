@@ -51,14 +51,15 @@ client.on('ready', async () => {
 
 client.on('message', (msg) => {
   console.log(`We are messaging in: ${msg.guild.name}`);
-  if (msg.author.username == 'SnoopFrogg') {
+  // TODO: Come back to this.
+  /* if (msg.author.username == 'SnoopFrogg') {
     console.log('we are here');
     msg.channel.send(`${msg.author.username} has a big PP`);
   } else {
     if (msg.author.username !== 'Young Larry David') {
       msg.channel.send(`${msg.author.username}, you a So Icy Bitch Boi`);
     }
-  }
+  }*/
   if (!msg.content.startsWith(prefix) || msg.author.bot) return;
 
   const args = msg.content.slice(prefix.length).trim().split(/ +/); // why do we do this again?
