@@ -51,6 +51,7 @@ client.on('ready', async () => {
 
 client.on('message', (msg) => {
   console.log(`We are messaging in: ${msg.guild.name}`);
+  console.log('author: ', msg.author);
   // TODO: Come back to this.
   /* if (msg.author.username == 'SnoopFrogg') {
     console.log('we are here');
