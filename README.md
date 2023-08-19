@@ -48,7 +48,7 @@ Let me know what other artist or lyrics I should add.
 
 ## TODO
 - [ ] Clean up the command folder
-- [ x ] Figure out the list logic
+- [x] Figure out the list logic
 - [ ] Add the Markov chain functionality back
 - [ ] Host on Raspberry Pi
 - [ ] Make help commands and list display messages look pretty with embedded messages.
