@@ -4,11 +4,11 @@ module.exports = {
   execute: (msg, args) => {
     const random_lyrics = [
       'Like a pigeon in the sky, I just shitted on your ride',
-      'I’m far from broke, got enough bread And mad hoes, ask Beavis I get nothing Butthead',
+      'I\’m far from broke, got enough bread And mad hoes, ask Beavis I get nothing Butthead',
       'I jumped out the Lincoln, left him stinkin. Put his brains in the street. Now you can see what he was just thinkin',
       'I got drug spots from new york to canada. Cause big l be fuckin with more keys than a janitor',
-      'I’m quick to bust a mean nut in some teen slut. Big L is clean-cut with more jewels than King Tut',
-      'And when it comes to gettin nookie. I’m not a rookie, I got girls that make that chick Toni Braxton look like Whoopie',
+      'I\’m quick to bust a mean nut in some teen slut. Big L is clean-cut with more jewels than King Tut',
+      'And when it comes to gettin nookie. I\’m not a rookie, I got girls that make that chick Toni Braxton look like Whoopie',
       'Since the burial of Jesus, fuck around and catch all the venereal diseases',
       'Put a hanger on a fuckin stove and let that shit sit there for like a half hour, take it off and stick it in your ass slow like Tssssssss',
       'I\'ll fuckin, I\'ll fuckin cut your kneecaps off and make you kneel in some staircase piss',
