@@ -53,6 +53,9 @@ client.on('message', (msg) => {
   console.log(`We are messaging in: ${msg.guild.name}`);
   console.log('author: ', msg.author);
   // TODO: Come back to this.
+  // We should calculate the current time in milliseconds
+  // Figure out how many milliseconds is an hour.
+  // If sum is an hour after original time then call someone a bitch
   /* if (msg.author.username == 'SnoopFrogg') {
     console.log('we are here');
     msg.channel.send(`${msg.author.username} has a big PP`);
@@ -65,11 +68,9 @@ client.on('message', (msg) => {
 
   const args = msg.content.slice(prefix.length).trim().split(/ +/); // why do we do this again?
   const command = args.shift().toLowerCase();
-
   // Talk back to ya boi
   console.log(`${msg.channel.guild ? msg.channel.guild.name : 'DM'}`
               + `# ${msg.channel.name} ${msg.author.tag}: ${msg.content}`);
-
   if (!client.commands.has(command)) return;
   try {
     client.commands.get(command).execute(msg, args);
@@ -78,18 +79,7 @@ client.on('message', (msg) => {
     msg.channel.send('There was an error trying to execute that command!');
   }
 });
-
 // Figure out away to log the amount of servers the bot is in.
-
-// This shit no work either...
-client.on('guildMemberAdd', (member) => {
-  // Send the message to a designated channel on a server.
-  const channel = member.guild.channels.cache.find(ch => ch.name === 'general');
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-  channel.send(`Welcome to the server, ${member}`);
-});
 
 client.login(token);
 // client.login(process.env.token);
